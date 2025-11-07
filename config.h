@@ -27,13 +27,22 @@ static const char text[]            = "#b6b6b6";
 static const char unf[]             = "#212121";
 static const char base[]            = "#141414";
 
+static const char green[]           = "#b6bc7a";
+static const char red[]             = "#de4c4c";
+static const char blue[]            = "#8ca7bd";
+static const char yellow[]          = "#f3ce86";
+
 /* color schemes */
-enum { SchemeNorm, SchemeSel };
+enum { SchemeNorm, SchemeSel, Red, Green, Blue, Yellow };
 
 static const char *colors[][3]      = {
 	/*               fg       bg        border   */
 	[SchemeNorm] = { text,    base,     unf     },
 	[SchemeSel]  = { base, 	  accent,   accent  },	
+	[Red]        = { red,     base },
+	[Green]      = { green,   base },
+	[Blue]       = { blue,    base },
+	[Yellow]     = { yellow,  base },
 };
 
 /* tagging */
@@ -127,6 +136,10 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% ; kill -36 $(pidof dwmblocks)") },
 	{ 0,                            XF86XK_AudioMute,          spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle ; kill -36 $(pidof dwmblocks)") },
 
+	/* brightness binds */
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn,          SHCMD("xbacklight -inc 10") },
+	{ 0,                            XF86XK_MonBrightnessDown,  spawn,          SHCMD("xbacklight -dec 10") },
+	
 	/* player ctl binds */
 	{ MODKEY|ControlMask,           XK_space,                  spawn,          SHCMD("playerctl --player=cmus play-pause") },
 	{ MODKEY|ControlMask,           XK_a,                      spawn,          SHCMD("playerctl --player=cmus previous") },
@@ -134,15 +147,18 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_w,                      spawn,          SHCMD("playerctl --player=cmus volume 0.1+") },
 	{ MODKEY|ControlMask,           XK_s,                      spawn,          SHCMD("playerctl --player=cmus volume 0.1-") },
 
-	{ MODKEY|ControlMask|ShiftMask, XK_space,                  spawn,          SHCMD("playerctl --player=firefox play-pause") },
-	{ MODKEY|ControlMask|ShiftMask, XK_a,                      spawn,          SHCMD("playerctl --player=firefox previous") },
-	{ MODKEY|ControlMask|ShiftMask, XK_d,                      spawn,          SHCMD("playerctl --player=firefox next") },
+	{ 0,                            XF86XK_AudioPlay,          spawn,          SHCMD("playerctl  play-pause") },
+	{ 0,                            XF86XK_AudioPrev,          spawn,          SHCMD("playerctl  previous") },
+	{ 0,                            XF86XK_AudioNext,          spawn,          SHCMD("playerctl  next") },
 
 	/* screenshot binds */
 	{ MODKEY,                       XK_Print,                  spawn,          SHCMD("~/.config/scripts/ss-full-clip") },
 	{ MODKEY|ShiftMask,             XK_Print,                  spawn,          SHCMD("~/.config/scripts/ss-crop-drive") },
 	{ MODKEY|ControlMask|ShiftMask, XK_Print,                  spawn,          SHCMD("~/.config/scripts/ss-full-drive") },
 	{ 0,                            XK_Print,                  spawn,          SHCMD("~/.config/scripts/ss-crop-clip") },
+
+	/* switch keyboard */
+	{ MODKEY2,                      XK_Shift_L,                spawn,          SHCMD("~/.config/scripts/kbswitch") },
 
 	/* command spawning */
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
