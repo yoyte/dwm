@@ -60,7 +60,6 @@ static const Rule rules[] = {
 	{ "tf_linux64",        NULL,                       NULL,		1 << 1,       0,           -1 },
 	{ "hl2_linux",         NULL,                       NULL,		1 << 1,       0,           -1 },
 	{ "Unturned.x86_64",   NULL,                       NULL,		1 << 1,       0,           -1 },
-	{ "librewolf",         NULL,                       NULL,		1 << 0,       0,           -1 },
 	{ "Lutris",            NULL,                       NULL,		1 << 2,       0,           -1 },
 	{ "melonDS",           NULL,                       NULL,		1 << 2,       0,           -1 },
 	{ NULL,                "steamwebhelper",           NULL,		1 << 3,       0,           -1 },
