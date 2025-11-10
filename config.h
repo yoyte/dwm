@@ -85,9 +85,6 @@ static const Layout layouts[] = {
 	{ ":::",      gaplessgrid },
 	{ "###",      nrowgrid },
 	{ "|M|",      centeredmaster },
-	{ "[@]",      spiral },
-	{ "[\\]",     dwindle },
-	{ "H[]",      deck },
 	{ "><>",      NULL },                                /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
@@ -235,9 +232,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,                      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_y,                      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_u,                      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY,                       XK_i,                      setlayout,      {.v = &layouts[6]} },
-	{ MODKEY,                       XK_o,                      setlayout,      {.v = &layouts[7]} },
-	{ MODKEY,                       XK_p,                      setlayout,      {.v = &layouts[8]} },
 	{ MODKEY,                       XK_minus,                  cyclelayout,    {.i = -1 } },
 	{ MODKEY,                       XK_equal,                  cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_f,                      togglefullscr,  {0} },
@@ -292,7 +286,7 @@ static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {.v = &layouts[0]} },
 	{ ClkLtSymbol,          0,              Button2,        setlayout,      {.v = &layouts[1]} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[8]} },
+	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[5]} },
 	{ ClkLtSymbol,          0,              Button4,        cyclelayout,    {.i = -1 } },
 	{ ClkLtSymbol,          0,              Button5,        cyclelayout,    {.i = +1 } },
 	{ ClkWinTitle,          0,              Button4,        focusstack,     {.i = -1 } },
