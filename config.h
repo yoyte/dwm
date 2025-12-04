@@ -136,8 +136,8 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioMute,          spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle ; kill -36 $(pidof dwmblocks)") },
 
 	/* brightness binds */
-	{ 0,                            XF86XK_MonBrightnessUp,    spawn,          SHCMD("xbacklight -inc 10") },
-	{ 0,                            XF86XK_MonBrightnessDown,  spawn,          SHCMD("xbacklight -dec 10") },
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn,          SHCMD("xbacklight -inc 5; kill -40 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_MonBrightnessDown,  spawn,          SHCMD("xbacklight -dec 5; kill -40 $(pidof dwmblocks)") },
 	
 	/* player ctl binds */
 	{ MODKEY|ControlMask,           XK_space,                  spawn,          SHCMD("playerctl --player=cmus play-pause") },
