@@ -27,22 +27,27 @@ static const char text[]            = "#b6b6b6";
 static const char unf[]             = "#212121";
 static const char base[]            = "#141414";
 
-static const char green[]           = "#b6bc7a";
 static const char red[]             = "#de4c4c";
+static const char green[]           = "#b6bc7a";
 static const char blue[]            = "#8ca7bd";
 static const char yellow[]          = "#f3ce86";
 
 /* color schemes */
-enum { SchemeNorm, SchemeSel, Red, Green, Blue, Yellow };
+enum { SchemeNorm, SchemeSel, SchemeRed, SchemeGreen, SchemeBlue, SchemeYellow, SchemeStatus, SchemeTagsSel, SchemeTagsNorm, SchemeInfoSel, SchemeInfoNorm };
 
 static const char *colors[][3]      = {
-	/*               fg       bg        border   */
-	[SchemeNorm] = { text,    base,     unf     },
-	[SchemeSel]  = { base, 	  accent,   accent  },	
-	[Red]        = { red,     base },
-	[Green]      = { green,   base },
-	[Blue]       = { blue,    base },
-	[Yellow]     = { yellow,  base },
+	/*                   fg       bg        border   */
+	[SchemeNorm]     = { text,    base,     unf    },
+	[SchemeSel]      = { base, 	  accent,   accent },	
+	[SchemeRed]      = { red,     base   },
+	[SchemeGreen]    = { green,   base   },
+	[SchemeBlue]     = { blue,    base   },
+	[SchemeYellow]   = { yellow,  base   },
+	[SchemeStatus]   = { text,    base   },
+	[SchemeTagsSel]  = { base,    accent },
+	[SchemeTagsNorm] = { text,    base   },
+	[SchemeInfoSel]  = { base,    accent },
+	[SchemeInfoNorm] = { text,    base   },
 };
 
 /* tagging */
