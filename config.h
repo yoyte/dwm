@@ -157,7 +157,7 @@ static const Key keys[] = {
 	{ 0,                            XK_Print,                  spawn,          SHCMD("~/.config/scripts/ss-crop-clip") },
 
 	/* switch keyboard */
-	{ MODKEY2,                      XK_Shift_L,                spawn,          SHCMD("~/.config/scripts/kbswitch") },
+	{ MODKEY2|ControlMask,          XK_Shift_L,                spawn,          SHCMD("~/.config/scripts/kbswitch") },
 
 	/* command spawning */
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
