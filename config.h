@@ -120,9 +120,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_F2,                     spawn,          SHCMD("torbrowser-launcher") },
 	{ MODKEY,                       XK_F3,                     spawn,          SHCMD("st -e yazi") },
 	{ MODKEY,                       XK_F4,                     spawn,          SHCMD("keepassxc") },
-	{ MODKEY,                       XK_F5,                     spawn,          SHCMD("st -e cmus") },
-	{ MODKEY,                       XK_F6,                     spawn,          SHCMD("st -e btop") },
-	{ MODKEY,                       XK_F7,                     spawn,          SHCMD("st -e htop") },
+	{ MODKEY,                       XK_F5,                     spawn,          SHCMD("st -e btop") },
+	{ MODKEY,                       XK_F6,                     spawn,          SHCMD("st -e htop") },
 
 	/* rofi & dmenu binds */
 	{ MODKEY,                       XK_c,                      spawn,          SHCMD("rofi -show drun -config ~/.config/rofi/drun.rasi") },
